@@ -20,8 +20,6 @@ public:
             int L = w.size();
 
             for(int k=0;k<=L;k++){
-                // split: left = w[0..k-1], right = w[k..L-1]
-                // case 1: left is palindrome, need rev(right) in front
                 if(isPal(w, 0, k-1)){
                     string right = w.substr(k);
                     reverse(right.begin(), right.end());
@@ -30,8 +28,6 @@ public:
                         ans.push_back({it->second, i});
                     }
                 }
-
-                // case 2: right is palindrome, need rev(left) at end
                 if(k != L && isPal(w, k, L-1)){
                     string left = w.substr(0, k);
                     reverse(left.begin(), left.end());
