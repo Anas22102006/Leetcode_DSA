@@ -19,14 +19,9 @@ public:
         }
         int l= (length/2);
         int temp=0;
-        while(head!=nullptr){
-            if(temp>=l){
-                break;
-            }
-            else{
-                temp++;
-                head=head->next;
-            }
+        while(temp<l){
+            head=head->next;
+            temp++;
         }
         return head;
     }
